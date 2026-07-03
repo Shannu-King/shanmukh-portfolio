@@ -120,6 +120,7 @@ export function Hero() {
             >
               <a
                 href="#projects"
+                onClick={() => trackEvent("click_navigation", "navigation", "Hero - View Projects")}
                 className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--cyan)] text-background px-6 py-3.5 text-base font-semibold shadow-elegant hover:scale-[1.02] transition-transform"
               >
                 View Projects
@@ -135,6 +136,7 @@ export function Hero() {
               </a>
               <a
                 href="#contact"
+                onClick={() => trackEvent("click_navigation", "navigation", "Hero - Contact Me")}
                 className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               >
                 Contact Me →
@@ -154,6 +156,7 @@ export function Hero() {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={s.label}
+                  onClick={() => trackEvent("click_social", "engagement", `Hero - ${s.label}`)}
                   className="grid h-10 w-10 place-items-center rounded-lg glass text-muted-foreground hover:text-[var(--cyan)] hover:-translate-y-0.5 transition-all"
                 >
                   <s.icon className="h-4.5 w-4.5" />

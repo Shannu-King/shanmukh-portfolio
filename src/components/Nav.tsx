@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navItems } from "@/config/portfolio";
 import { cn } from "@/lib/utils";
+import { trackEvent, trackPageView } from "@/lib/analytics";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -14,6 +15,16 @@ export function Nav() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const sectionPath = active === "home" ? "/" : `/#${active}`;
+      const sectionName = active.charAt(0).toUpperCase() + active.slice(1);
+      trackPageView(sectionPath, `Shanmukh Tharun - ${sectionName}`);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, [active]);
 
   useEffect(() => {
     const ids = navItems
@@ -71,7 +82,11 @@ export function Nav() {
             scrolled ? "glass-strong shadow-elegant" : "bg-transparent",
           )}
         >
-          <a href="#home" className="flex items-center gap-2 group">
+          <a
+            href="#home"
+            onClick={() => trackEvent("click_navigation", "navigation", "Navbar - Logo")}
+            className="flex items-center gap-2 group"
+          >
             <img
               src="/logo.png"
               alt="Logo"
@@ -89,6 +104,7 @@ export function Nav() {
                 <a
                   key={n.href}
                   href={n.href}
+                  onClick={() => trackEvent("click_navigation", "navigation", `Navbar - ${n.label}`)}
                   className={cn(
                     "relative rounded-lg px-3 py-1.5 text-sm transition-colors",
                     isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground",
@@ -109,6 +125,7 @@ export function Nav() {
 
           <a
             href="#contact"
+            onClick={() => trackEvent("click_navigation", "navigation", "Navbar - Let's talk")}
             className="hidden lg:inline-flex items-center gap-2 rounded-lg bg-foreground text-background px-4 py-2 text-sm font-medium hover:bg-foreground/90 transition-colors"
           >
             Let's talk
@@ -155,7 +172,10 @@ export function Nav() {
                 <a
                   key={n.href}
                   href={n.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                    trackEvent("click_navigation", "navigation", `Mobile Navbar - ${n.label}`);
+                  }}
                   className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:text-foreground hover:bg-white/5"
                 >
                   {n.label}

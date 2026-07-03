@@ -146,6 +146,7 @@ export function Contact() {
   const handleIframeLoad = useCallback(() => {
     if (status === "sending") {
       setStatus("success");
+      trackEvent("submit_contact_form", "engagement", "Success");
     }
   }, [status]);
 
@@ -154,6 +155,7 @@ export function Contact() {
     e.stopPropagation();
     navigator.clipboard.writeText("tarunturpudi@gmail.com");
     setCopied(true);
+    trackEvent("copy_email", "engagement", "Contact Section");
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -201,7 +203,11 @@ export function Contact() {
       <div className="mt-8 grid lg:grid-cols-2 gap-6 items-start">
         <div className="grid sm:grid-cols-2 gap-3 content-start">
           {/* Email card */}
-          <a href={links.email} className="group">
+          <a
+            href={links.email}
+            onClick={() => trackEvent("click_contact_method", "engagement", "Email")}
+            className="group"
+          >
             <GlassCard interactive className="!p-4 flex items-center justify-between gap-3">
               <div className="flex items-center gap-3">
                 <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--primary)]/25 to-[var(--purple)]/25 text-white">
@@ -226,7 +232,13 @@ export function Contact() {
           </a>
 
           {/* LinkedIn card */}
-          <a href={links.linkedin} target="_blank" rel="noreferrer noopener" className="group">
+          <a
+            href={links.linkedin}
+            target="_blank"
+            rel="noreferrer noopener"
+            onClick={() => trackEvent("click_contact_method", "engagement", "LinkedIn")}
+            className="group"
+          >
             <GlassCard interactive className="!p-4 flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--primary)]/25 to-[var(--purple)]/25 text-white">
                 <FiLinkedin className="h-4.5 w-4.5" />
@@ -243,7 +255,13 @@ export function Contact() {
           </a>
 
           {/* GitHub card */}
-          <a href={links.github} target="_blank" rel="noreferrer noopener" className="group">
+          <a
+            href={links.github}
+            target="_blank"
+            rel="noreferrer noopener"
+            onClick={() => trackEvent("click_contact_method", "engagement", "GitHub")}
+            className="group"
+          >
             <GlassCard interactive className="!p-4 flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--primary)]/25 to-[var(--purple)]/25 text-white">
                 <FiGithub className="h-4.5 w-4.5" />
@@ -260,7 +278,13 @@ export function Contact() {
           </a>
 
           {/* LeetCode card */}
-          <a href={links.leetcode} target="_blank" rel="noreferrer noopener" className="group">
+          <a
+            href={links.leetcode}
+            target="_blank"
+            rel="noreferrer noopener"
+            onClick={() => trackEvent("click_contact_method", "engagement", "LeetCode")}
+            className="group"
+          >
             <GlassCard interactive className="!p-4 flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--primary)]/25 to-[var(--purple)]/25 text-white">
                 <SiLeetcode className="h-4.5 w-4.5 text-[#FFA116]" />
@@ -277,7 +301,13 @@ export function Contact() {
           </a>
 
           {/* CodeChef card */}
-          <a href={links.codechef} target="_blank" rel="noreferrer noopener" className="group">
+          <a
+            href={links.codechef}
+            target="_blank"
+            rel="noreferrer noopener"
+            onClick={() => trackEvent("click_contact_method", "engagement", "CodeChef")}
+            className="group"
+          >
             <GlassCard interactive className="!p-4 flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-[var(--primary)]/25 to-[var(--purple)]/25 text-white">
                 <SiCodechef className="h-4.5 w-4.5 text-orange-400" />

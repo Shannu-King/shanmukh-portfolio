@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { SiLeetcode, SiCodechef } from "react-icons/si";
+import { trackEvent } from "@/lib/analytics";
 
 function Bar({ topic, count }: { topic: string; count: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -120,6 +121,7 @@ export function CodingProfiles() {
               href={links.leetcode}
               target="_blank"
               rel="noreferrer noopener"
+              onClick={() => trackEvent("click_profile", "engagement", "LeetCode")}
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-[#FFA116]/5 border border-[#FFA116]/30 px-4 py-2.5 text-xs font-semibold text-[#FFA116] hover:bg-[#FFA116] hover:text-background hover:border-[#FFA116] transition-all duration-300"
             >
               Visit Profile <FiExternalLink />
@@ -171,6 +173,7 @@ export function CodingProfiles() {
               href={links.codechef}
               target="_blank"
               rel="noreferrer noopener"
+              onClick={() => trackEvent("click_profile", "engagement", "CodeChef")}
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-orange-500/5 border border-orange-500/30 px-4 py-2.5 text-xs font-semibold text-orange-400 hover:bg-orange-500 hover:text-background hover:border-orange-500 transition-all duration-300"
             >
               Visit Profile <FiExternalLink />

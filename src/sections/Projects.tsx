@@ -5,6 +5,7 @@ import { projects, type Project } from "@/config/portfolio";
 import { FiGithub, FiExternalLink, FiChevronDown } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { trackEvent } from "@/lib/analytics";
 
 function MockUI({ type, projectTitle }: { type: string; projectTitle: string }) {
   switch (type) {
@@ -150,6 +151,7 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
                   href={p.github}
                   target="_blank"
                   rel="noreferrer noopener"
+                  onClick={() => trackEvent("click_project_code", "engagement", p.title)}
                   className="inline-flex items-center gap-1.5 rounded-lg glass px-3 py-2 text-xs font-medium hover:bg-white/10"
                 >
                   <FiGithub /> Code
@@ -169,6 +171,7 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
                     href={p.demo}
                     target="_blank"
                     rel="noreferrer noopener"
+                    onClick={() => trackEvent("click_project_demo", "engagement", p.title)}
                     className="inline-flex items-center gap-1.5 rounded-lg bg-foreground text-background px-3 py-2 text-xs font-semibold hover:bg-foreground/90"
                   >
                     <FiExternalLink /> Live Demo
@@ -177,7 +180,15 @@ function ProjectCard({ p, index }: { p: Project; index: number }) {
               )}
 
               <button
-                onClick={() => setOpen((v) => !v)}
+                onClick={() => {
+                  const nextState = !open;
+                  setOpen(nextState);
+                  trackEvent(
+                    nextState ? "expand_project_details" : "collapse_project_details",
+                    "engagement",
+                    p.title
+                  );
+                }}
                 aria-expanded={open}
                 className="ml-auto inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium text-muted-foreground hover:text-foreground"
               >
