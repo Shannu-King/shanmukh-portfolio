@@ -1,8 +1,9 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { FiGithub, FiLinkedin, FiMail, FiDownload, FiArrowRight } from "react-icons/fi";
 import { SiLeetcode, SiCodechef } from "react-icons/si";
 import { profile, links } from "@/config/portfolio";
-import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
+
 
 const socials = [
   { icon: FiGithub, href: links.github, label: "GitHub" },
@@ -11,42 +12,6 @@ const socials = [
   { icon: SiLeetcode, href: links.leetcode, label: "LeetCode" },
   { icon: SiCodechef, href: links.codechef, label: "CodeChef" },
 ];
-
-const roles = [
-  "Full Stack Developer",
-  "Competitive Programmer",
-  "Knight @ LeetCode",
-  "Problem Solver",
-  "Campus Mantri @ GFG",
-];
-
-function RotatingRoles() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % roles.length);
-    }, 2800);
-    return () => clearInterval(timer);
-  }, []);
-
-  return (
-    <span className="inline-block h-[1.3em] overflow-hidden align-bottom">
-      <AnimatePresence mode="wait">
-        <motion.span
-          key={roles[index]}
-          initial={{ y: 30, opacity: 0, rotateX: -80 }}
-          animate={{ y: 0, opacity: 1, rotateX: 0 }}
-          exit={{ y: -30, opacity: 0, rotateX: 80 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-block gradient-text text-glow"
-        >
-          {roles[index]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
-  );
-}
 
 export function Hero() {
   return (
@@ -87,27 +52,14 @@ export function Hero() {
               {profile.name.split(" ")[0]} <span className="gradient-text text-glow">{profile.name.split(" ").slice(1).join(" ")}</span>
             </motion.h1>
 
-            {/* Title & Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="mt-4"
-            >
-              <div className="text-xl sm:text-2xl font-display font-semibold tracking-tight gradient-text text-glow">
-                Full Stack Developer & Competitive Programmer
-              </div>
-              <div className="mt-2 text-sm sm:text-base font-medium text-[var(--cyan)]">
-                React • Node.js • Java • C++ • MySQL
-              </div>
-            </motion.div>
-
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
               className="mt-5 text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed"
             >
+              <span className="text-foreground font-medium">{profile.headline}</span>
+              <br />
               {profile.summary}
             </motion.p>
 
@@ -115,19 +67,19 @@ export function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="mt-8 flex flex-wrap items-center gap-4"
+              className="mt-8 flex flex-wrap items-center gap-3"
             >
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--cyan)] text-background px-6 py-3.5 text-base font-semibold shadow-elegant hover:scale-[1.02] transition-transform"
+                className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--cyan)] text-background px-5 py-3 text-sm font-semibold shadow-elegant hover:scale-[1.02] transition-transform"
               >
                 View Projects
                 <FiArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </a>
               <a
                 href={links.resume}
-                download
-                className="inline-flex items-center gap-2 rounded-xl glass shadow-elegant px-6 py-3.5 text-base font-medium hover:bg-white/10 transition-colors"
+                onClick={() => trackEvent("download_resume", "engagement", "Hero Section")}
+                className="inline-flex items-center gap-2 rounded-xl glass-strong px-5 py-3 text-sm font-medium hover:bg-white/10 transition-colors"
               >
                 <FiDownload /> Download Resume
               </a>
@@ -158,61 +110,42 @@ export function Hero() {
                 </a>
               ))}
             </motion.div>
-
-            {/* Quick Stats Row */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 0.6 }}
-              className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4"
-            >
-              {[
-                { value: "600+", label: "Problems" },
-                { value: "1853", label: "LeetCode Rating" },
-                { value: "Top 6%", label: "Global" },
-                { value: "9.15", label: "CGPA" }
-              ].map(stat => (
-                <div key={stat.label} className="flex flex-col">
-                  <span className="font-display text-xl font-bold text-foreground">{stat.value}</span>
-                  <span className="text-xs text-muted-foreground uppercase tracking-wider">{stat.label}</span>
-                </div>
-              ))}
-            </motion.div>
           </div>
 
-          {/* Portrait / circle */}
+          {/* Portrait / glass card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="relative mx-auto flex flex-col items-center gap-6"
+            className="relative mx-auto w-full max-w-sm"
           >
-            {/* Glow behind circle */}
-            <div className="absolute -inset-6 rounded-full bg-gradient-to-br from-[var(--primary)]/30 via-[var(--cyan)]/20 to-[var(--purple)]/30 blur-3xl" />
+            <div className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-[var(--primary)]/30 via-[var(--cyan)]/20 to-[var(--purple)]/30 blur-2xl" />
+            <div className="relative glass-strong rounded-[1.75rem] p-1.5 shadow-elegant">
+              <div className="relative aspect-[4/5] rounded-[1.45rem] overflow-hidden bg-gradient-to-br from-[var(--surface-elevated)] to-[var(--surface)] grid place-items-center">
+                <div className="text-center px-6">
+                  <div className="mx-auto h-32 w-32 rounded-full bg-gradient-to-br from-[var(--primary)] via-[var(--cyan)] to-[var(--purple)] p-[2px]">
+                    <div className="h-full w-full rounded-full bg-[var(--surface)] grid place-items-center text-4xl font-display font-bold">
+                      ST
+                    </div>
+                  </div>
+                  <div className="mt-6 text-sm text-muted-foreground">Final Year · CSE</div>
+                  <div className="mt-1 font-display text-lg font-semibold">{profile.university}</div>
+                </div>
 
-            {/* Gradient border ring + image */}
-            <div className="relative h-56 w-56 sm:h-64 sm:w-64 lg:h-72 lg:w-72 rounded-full bg-gradient-to-br from-[var(--primary)] via-[var(--cyan)] to-[var(--purple)] p-[3px] shadow-elegant">
-              <div className="h-full w-full rounded-full overflow-hidden">
-                <img
-                  src="/profile.jpg"
-                  alt={profile.name}
-                  className="h-full w-full object-cover object-top"
-                />
+                <div className="absolute bottom-4 left-4 right-4 grid grid-cols-3 gap-2 text-center text-xs">
+                  {[
+                    ["500+", "Solved"],
+                    ["Knight", "Badge"],
+                    ["Top 6%", "Rank"],
+                  ].map(([v, l]) => (
+                    <div key={l} className="glass rounded-lg px-2 py-2">
+                      <div className="font-semibold text-foreground">{v}</div>
+                      <div className="text-[10px] text-muted-foreground">{l}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-
-            {/* Info below circle */}
-            <div className="relative text-center space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full glass-strong px-4 py-1.5 text-sm font-medium">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-60" />
-                  <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
-                </span>
-                Final Year · CSE
-              </div>
-              <div className="font-display text-xl font-bold gradient-text text-glow">{profile.university}</div>
-            </div>
-
           </motion.div>
         </div>
       </div>
