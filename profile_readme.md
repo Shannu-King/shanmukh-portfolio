@@ -171,23 +171,16 @@ I am a final-year Computer Science & Engineering student at **Aditya University*
 
 ---
 
-### ⏳ Professional Timeline
+### ⏳ Professional Journey
 
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│  JAN 2026 - PRESENT                                                      │
-│  Full Stack Development Intern at Technical Hub Pvt Ltd                  │
-│  • Building responsive web applications and styling with modern frameworks│
-└──────────────────────────────────────────────────────────────────────────┘
-                              │
-                              ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│  2022 - 2026                                                             │
-│  Aditya University — B.Tech, Computer Science Engineering                │
-│  • CGPA: 9.15/10 (Up to 3rd Year)                                         │
-│  • Campus Mantri (Ambassador) for GeeksforGeeks                          │
-└──────────────────────────────────────────────────────────────────────────┘
-```
+* 💼 **Jan 2026 – Present**  
+  **Full Stack Development Intern** &bull; *Technical Hub Pvt Ltd*  
+  > Building responsive web applications, designing REST APIs, and styling with modern frameworks.
+
+* 🎓 **2022 – 2026**  
+  **B.Tech, Computer Science & Engineering** &bull; *Aditya University*  
+  > Academic performance: **9.15/10 CGPA** (up to 3rd Year).  
+  > Served as GeeksforGeeks Campus Mantri (Ambassador) leading on-campus tech initiatives.
 
 ---
 
