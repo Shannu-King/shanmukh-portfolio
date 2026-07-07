@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 280" width="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814"/>
+      <stop offset="50%" stop-color="#0b132b"/>
+      <stop offset="100%" stop-color="#121e3d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00b4d8"/>
+      <stop offset="50%" stop-color="#3a86ff"/>
+      <stop offset="100%" stop-color="#00f5d4"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a86ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00f5d4" stop-opacity="0.05"/>
+    </linearGradient>
+    <style>
+      .title { font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 34px; fill: #ffffff; letter-spacing: 2px; }
+      .title-glow { font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 800; font-size: 34px; fill: url(#accent); letter-spacing: 2px; filter: blur(8px); opacity: 0.6; }
+      .subtitle { font-family: 'Inter', -apple-system, sans-serif; font-weight: 500; font-size: 15px; fill: #94a3b8; letter-spacing: 1px; }
+      .tag { font-family: 'Fira Code', monospace; font-size: 12px; fill: #00f5d4; font-weight: bold; }
+      .stat-label { font-family: 'Inter', -apple-system, sans-serif; font-size: 11px; fill: #64748b; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+      .stat-val { font-family: 'Outfit', -apple-system, sans-serif; font-size: 17px; fill: #ffffff; font-weight: 700; }
+      .stat-sub { font-family: 'Inter', -apple-system, sans-serif; font-size: 11px; fill: #94a3b8; }
+      .typing {
+        font-family: 'Fira Code', 'Courier New', monospace;
+        font-size: 14px;
+        fill: #38bdf8;
+      }
+      .cursor {
+        fill: #38bdf8;
+        animation: blink 0.8s infinite;
+      }
+      @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="850" height="280" rx="16" fill="url(#bg)"/>
+  <rect width="850" height="280" rx="16" fill="url(#glow)"/>
+  
+  <!-- Grid -->
+  <g stroke="#ffffff" stroke-opacity="0.02" stroke-width="1">
+    <line x1="50" y1="0" x2="50" y2="280"/>
+    <line x1="150" y1="0" x2="150" y2="280"/>
+    <line x1="250" y1="0" x2="250" y2="280"/>
+    <line x1="350" y1="0" x2="350" y2="280"/>
+    <line x1="450" y1="0" x2="450" y2="280"/>
+    <line x1="550" y1="0" x2="550" y2="280"/>
+    <line x1="650" y1="0" x2="650" y2="280"/>
+    <line x1="750" y1="0" x2="750" y2="280"/>
+    <line x1="0" y1="50" x2="850" y2="50"/>
+    <line x1="0" y1="100" x2="850" y2="100"/>
+    <line x1="0" y1="150" x2="850" y2="150"/>
+    <line x1="0" y1="200" x2="850" y2="200"/>
+    <line x1="0" y1="250" x2="850" y2="250"/>
+  </g>
+  
+  <!-- Radial Glows -->
+  <circle cx="800" cy="60" r="140" fill="#00b4d8" filter="blur(90px)" opacity="0.25"/>
+  <circle cx="50" cy="220" r="110" fill="#3a86ff" filter="blur(80px)" opacity="0.15"/>
+
+  <!-- Border -->
+  <rect x="1" y="1" width="848" height="278" rx="15" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="1" y="1" width="848" height="278" rx="15" fill="none" stroke="url(#accent)" stroke-width="1.5" stroke-dasharray="100 800" stroke-linecap="round"/>
+
+  <!-- Content -->
+  <g transform="translate(50, 60)">
+    <text x="0" y="30" class="title-glow">SHANMUKHA THARUN</text>
+    <text x="0" y="30" class="title">SHANMUKHA THARUN</text>
+    <text x="0" y="62" class="subtitle">Full Stack Developer • Competitive Programmer</text>
+    
+    <!-- Code terminal line -->
+    <g transform="translate(0, 95)">
+      <rect width="440" height="36" rx="8" fill="#070c19" stroke="#1e293b" stroke-width="1"/>
+      <text x="15" y="23" class="typing">&gt; <tspan fill="#f43f5e">npm</tspan> run dev <tspan fill="#64748b">--focus=impact</tspan></text>
+      <rect x="235" y="10" width="8" height="15" class="cursor"/>
+    </g>
+
+    <g transform="translate(0, 150)">
+      <text x="0" y="15" class="tag">&lt;academic_info&gt;</text>
+      <text x="0" y="38" font-family="'Inter', sans-serif" font-size="13" fill="#cbd5e1">Aditya University • CGPA: 9.15/10</text>
+    </g>
+    
+    <!-- Right Dashboard Column -->
+    <g transform="translate(480, -10)">
+      <!-- Box 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="270" height="75" rx="12" fill="#080e1e" stroke="#1e293b" stroke-width="1"/>
+        <rect width="4" height="75" rx="2" fill="#38bdf8"/>
+        
+        <circle cx="35" cy="38" r="18" fill="#ffb703" fill-opacity="0.1"/>
+        <path d="M35 28 L38 34 L44 34 L39 38 L41 45 L35 41 L29 45 L31 38 L26 34 L32 34 Z" fill="#ffb703"/>
+        
+        <text x="65" y="28" class="stat-label">LeetCode Knight</text>
+        <text x="65" y="48" class="stat-val">Rating 1853</text>
+        <text x="65" y="63" class="stat-sub">Top 6% Global • 600+ Solved</text>
+      </g>
+      
+      <!-- Box 2 -->
+      <g transform="translate(0, 90)">
+        <rect width="270" height="75" rx="12" fill="#080e1e" stroke="#1e293b" stroke-width="1"/>
+        <rect width="4" height="75" rx="2" fill="#00f5d4"/>
+        
+        <circle cx="35" cy="38" r="18" fill="#00f5d4" fill-opacity="0.1"/>
+        <path d="M29 33 L24 38 L29 43 M41 33 L46 38 L41 43 M36 30 L32 46" stroke="#00f5d4" stroke-width="2" stroke-linecap="round" fill="none"/>
+        
+        <text x="65" y="28" class="stat-label">CodeChef &amp; GFG</text>
+        <text x="65" y="48" class="stat-val">2★ / Campus Mantri</text>
+        <text x="65" y="63" class="stat-sub">Peak 1550 • 250+ GFG Solved</text>
+      </g>
+    </g>
+  </g>
+</svg>

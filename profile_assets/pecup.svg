@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%">
+  <defs>
+    <linearGradient id="bg_p" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .p-title { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
+      .p-desc { font-family: 'Inter', sans-serif; font-size: 13px; fill: #94a3b8; }
+      .p-tag { font-family: 'Fira Code', monospace; font-size: 11px; fill: #38bdf8; font-weight: 600; }
+      .p-tag-bg { fill: #0c4a6e; fill-opacity: 0.3; stroke: #0284c7; stroke-width: 0.5; }
+    </style>
+  </defs>
+  <rect width="400" height="200" rx="14" fill="url(#bg_p)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="0" y="0" width="400" height="6" rx="3" fill="#38bdf8"/>
+  <g transform="translate(25, 35)">
+    <rect width="36" height="36" rx="8" fill="#38bdf8" fill-opacity="0.1" stroke="#38bdf8" stroke-width="1"/>
+    <path d="M14 24 L20 12 L26 24 Z M16 21 L24 21" stroke="#38bdf8" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <text x="50" y="24" class="p-title">Pecup.in</text>
+    
+    <text x="0" y="70" class="p-desc">Student academic platform offering 100+</text>
+    <text x="0" y="90" class="p-desc">resources, assignments, and previous papers.</text>
+    
+    <g transform="translate(0, 115)">
+      <rect width="65" height="22" rx="4" class="p-tag-bg"/>
+      <text x="10" y="15" class="p-tag">Next.js</text>
+      
+      <g transform="translate(73, 0)">
+        <rect width="55" height="22" rx="4" class="p-tag-bg"/>
+        <text x="10" y="15" class="p-tag">React</text>
+      </g>
+      
+      <g transform="translate(136, 0)">
+        <rect width="75" height="22" rx="4" fill="#064e3b" fill-opacity="0.3" stroke="#059669" stroke-width="0.5"/>
+        <text x="10" y="15" class="p-tag" fill="#34d399">Supabase</text>
+      </g>
+    </g>
+    
+    <g transform="translate(0, 148)">
+      <text x="0" y="12" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">Active Platform • 100+ Users</text>
+    </g>
+  </g>
+  <path d="M365 30 L375 40 M375 40 L365 50 M375 40 L355 40" stroke="#94a3b8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

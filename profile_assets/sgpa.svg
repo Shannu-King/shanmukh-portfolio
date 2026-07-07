@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%">
+  <defs>
+    <linearGradient id="bg_s" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <style>
+      .p-title { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 700; fill: #ffffff; }
+      .p-desc { font-family: 'Inter', sans-serif; font-size: 13px; fill: #94a3b8; }
+      .p-tag { font-family: 'Fira Code', monospace; font-size: 11px; fill: #00f5d4; font-weight: 600; }
+      .p-tag-bg { fill: #022c22; fill-opacity: 0.3; stroke: #0d9488; stroke-width: 0.5; }
+    </style>
+  </defs>
+  <rect width="400" height="200" rx="14" fill="url(#bg_s)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="0" y="0" width="400" height="6" rx="3" fill="#00f5d4"/>
+  <g transform="translate(25, 35)">
+    <rect width="36" height="36" rx="8" fill="#00f5d4" fill-opacity="0.1" stroke="#00f5d4" stroke-width="1"/>
+    <path d="M12 15 L28 15 M12 20 L28 20 M12 25 L28 25 M20 12 L20 28" stroke="#00f5d4" stroke-width="2" fill="none" stroke-linecap="round"/>
+    
+    <text x="50" y="24" class="p-title">SGPA Calculator</text>
+    
+    <text x="0" y="70" class="p-desc">Fast, responsive academic SGPA calculator</text>
+    <text x="0" y="90" class="p-desc">built for quick computation &amp; tracking.</text>
+    
+    <g transform="translate(0, 115)">
+      <rect width="55" height="22" rx="4" class="p-tag-bg"/>
+      <text x="10" y="15" class="p-tag">HTML</text>
+      
+      <g transform="translate(63, 0)">
+        <rect width="48" height="22" rx="4" class="p-tag-bg"/>
+        <text x="10" y="15" class="p-tag">CSS</text>
+      </g>
+      
+      <g transform="translate(119, 0)">
+        <rect width="90" height="22" rx="4" class="p-tag-bg"/>
+        <text x="10" y="15" class="p-tag">JavaScript</text>
+      </g>
+    </g>
+    
+    <g transform="translate(0, 148)">
+      <text x="0" y="12" font-family="'Inter', sans-serif" font-size="11" fill="#64748b">Live Deployment • Simple &amp; Fast</text>
+    </g>
+  </g>
+  <path d="M365 30 L375 40 M375 40 L365 50 M375 40 L355 40" stroke="#94a3b8" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
