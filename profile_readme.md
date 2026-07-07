@@ -129,7 +129,7 @@ I am a final-year Computer Science & Engineering student at **Aditya University*
     <td width="50%" valign="top" style="padding-left: 10px; margin-top: 15px;">
       <!-- GitHub Stats Widget -->
       <div align="center" style="margin-top: 10px;">
-        <img src="https://github-readme-stats.vercel.app/api?username=Shannu-King&show_icons=true&theme=tokyonight&bg_color=0D1117&title_color=38BDF8&text_color=94A3B8&icon_color=38BDF8&border_color=1E293B" width="100%" alt="GitHub Stats" />
+        <img src="https://github-stats-extended.vercel.app/api?username=Shannu-King&show_icons=true&theme=tokyonight&bg_color=0D1117&title_color=38BDF8&text_color=94A3B8&icon_color=38BDF8&border_color=1E293B" width="100%" alt="GitHub Stats" />
       </div>
     </td>
   </tr>
@@ -146,8 +146,8 @@ I am a final-year Computer Science & Engineering student at **Aditya University*
       <img src="https://github-readme-streak-stats.herokuapp.com/?user=Shannu-King&theme=tokyonight&background=0D1117&ring=38BDF8&fire=38BDF8&currStreakLabel=38BDF8&sideLabels=94A3B8&dates=94A3B8&text=94A3B8&border=1E293B" width="100%" alt="GitHub Streak" />
     </td>
     <td width="50%" valign="top" align="center">
-      <h4>🏆 GitHub Trophies</h4>
-      <img src="https://github-profile-trophy.vercel.app/?username=Shannu-King&theme=tokyonight&column=2&margin-w=5&margin-h=5&no-bg=true&no-border=true" width="100%" alt="GitHub Trophies" />
+      <h4>💻 Top Languages</h4>
+      <img src="https://github-stats-extended.vercel.app/api/top-langs/?username=Shannu-King&layout=compact&theme=tokyonight&bg_color=0D1117&title_color=38BDF8&text_color=94A3B8&icon_color=38BDF8&border_color=1E293B" width="100%" alt="Top Languages" />
     </td>
   </tr>
 </table>
@@ -199,7 +199,7 @@ I am a final-year Computer Science & Engineering student at **Aditya University*
 
 <div align="center">
   <a href="https://github.com/Shannu-King">
-    <img src="https://profile-counter.glitch.me/Shannu-King/count.svg" alt="Profile Views" />
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FShannu-King%2FShannu-King&amp;count_bg=%2338BDF8&amp;title_bg=%231E293B&amp;title=Profile+Views&amp;edge_flat=true" alt="Profile Views" />
   </a>
   <br/>
   <sub>Designed with precision &bull; Built for performance</sub>
