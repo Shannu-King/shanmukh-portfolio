@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 200" width="100%" height="auto">
+  <rect width="338" height="198" x="1" y="1" rx="10" fill="#0D1117" stroke="#1E293B" stroke-width="1"/>
+  
+  <text x="25" y="35" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-weight="bold" font-size="16" fill="#38BDF8">Most Used Languages</text>
+  
+  <!-- Progress Bar Group -->
+  <g transform="translate(25, 55)">
+    <!-- JavaScript: 45% (Width: 290 * 0.45 = 130.5) -->
+    <rect x="0" width="130.5" height="10" rx="5" fill="#f1e05a"/>
+    <!-- C++: 30% (Width: 290 * 0.30 = 87) -->
+    <rect x="130.5" width="87" height="10" rx="5" fill="#f34b7d"/>
+    <!-- TypeScript: 15% (Width: 290 * 0.15 = 43.5) -->
+    <rect x="217.5" width="43.5" height="10" rx="5" fill="#3178c6"/>
+    <!-- Others: 10% (Width: 290 * 0.10 = 29) -->
+    <rect x="261" width="29" height="10" rx="5" fill="#858585"/>
+  </g>
+
+  <!-- Legend Grid -->
+  <g transform="translate(25, 90)" font-family="'Segoe UI', Ubuntu, Sans-Serif" font-size="13" font-weight="600">
+    <!-- JS -->
+    <g transform="translate(0, 0)">
+      <circle cx="10" cy="10" r="6" fill="#f1e05a"/>
+      <text x="25" y="14" fill="#94A3B8">JavaScript</text>
+      <text x="110" y="14" fill="#F8FAFC">45.0%</text>
+    </g>
+    <!-- C++ -->
+    <g transform="translate(0, 25)">
+      <circle cx="10" cy="10" r="6" fill="#f34b7d"/>
+      <text x="25" y="14" fill="#94A3B8">C++</text>
+      <text x="110" y="14" fill="#F8FAFC">30.0%</text>
+    </g>
+    <!-- TS -->
+    <g transform="translate(160, 0)">
+      <circle cx="10" cy="10" r="6" fill="#3178c6"/>
+      <text x="25" y="14" fill="#94A3B8">TypeScript</text>
+      <text x="110" y="14" fill="#F8FAFC">15.0%</text>
+    </g>
+    <!-- Others -->
+    <g transform="translate(160, 25)">
+      <circle cx="10" cy="10" r="6" fill="#858585"/>
+      <text x="25" y="14" fill="#94A3B8">Others</text>
+      <text x="110" y="14" fill="#F8FAFC">10.0%</text>
+    </g>
+  </g>
+</svg>
