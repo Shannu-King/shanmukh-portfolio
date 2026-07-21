@@ -66,8 +66,8 @@
 
   <!-- Content -->
   <g transform="translate(50, 60)">
-    <text x="0" y="30" class="title-glow">SHANMUKHA THARUN</text>
-    <text x="0" y="30" class="title">SHANMUKHA THARUN</text>
+    <text x="0" y="30" class="title-glow">SHANMUKH THARUN</text>
+    <text x="0" y="30" class="title">SHANMUKH THARUN</text>
     <text x="0" y="62" class="subtitle">Full Stack Developer • Competitive Programmer</text>
     
     <!-- Code terminal line -->
